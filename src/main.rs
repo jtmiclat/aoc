@@ -21,6 +21,10 @@ fn main() {
     match (year, day, part) {
         (2015, 1, 1) => year_2015::day1::part1(file),
         (2015, 1, 2) => year_2015::day1::part2(file),
+        (2015, 2, 1) => year_2015::day2::part1(file),
+        (2015, 2, 2) => year_2015::day2::part2(file),
+        (2015, 3, 1) => year_2015::day3::part1(file),
+        (2015, 3, 2) => year_2015::day3::part2(file),
         _ => println!("No solution found."),
     }
 }
