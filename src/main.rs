@@ -1,7 +1,6 @@
 use clap::Parser;
 #[path = "2015/mod.rs"]
 mod year_2015;
-use year_2015::day1;
 
 /// Simple program to greet a person
 #[derive(Parser, Debug)]
@@ -20,7 +19,8 @@ fn main() {
     let part = args.part;
     let file = args.file;
     match (year, day, part) {
-        (2015, 1, 1) => day1::solve_2015_day1_1(file),
+        (2015, 1, 1) => year_2015::day1::part1(file),
+        (2015, 1, 2) => year_2015::day1::part2(file),
         _ => println!("No solution found."),
     }
 }
