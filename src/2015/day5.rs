@@ -1,5 +1,4 @@
 use std::fs;
-
 fn good_string(string: &str) -> bool {
     let bad_substrings: Vec<&str> = vec!["ab", "cd", "pq", "xy"];
     let vowel_num = string
@@ -33,16 +32,35 @@ fn good_string2(string: &str) -> bool {
     let mut has_repeating_char = false;
     let mut previous_c = '\0';
     let mut previous_c_2 = '\0';
-    for c in char_vec {
-        if previous_c_2 == c {
+    for c in &char_vec {
+        if previous_c_2 == *c {
             has_repeating_char = true;
             break;
         } else {
             previous_c_2 = previous_c;
-            previous_c = c;
+            previous_c = *c;
         }
     }
-    has_repeating_char
+    let bigrams: Vec<[char; 2]> = (0..char_vec.len() - 1)
+        .map(|x| [char_vec[x], char_vec[x + 1]])
+        .collect();
+    let mut appear_twice = false;
+    for bigram in &bigrams {
+        let indices = bigrams
+            .iter()
+            .enumerate()
+            .filter(|(_, x)| x == &bigram)
+            .map(|(index, _)| index)
+            .collect::<Vec<_>>();
+        if indices.len() > 1 {
+            if indices.len() == 2 && (indices[1] - indices[0]) == 1 {
+            } else {
+                appear_twice = true;
+                break;
+            }
+        }
+    }
+    has_repeating_char && appear_twice
 }
 pub fn part1(file: String) {
     let values: String = fs::read_to_string(file).expect("Error opening file");
