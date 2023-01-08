@@ -27,6 +27,8 @@ fn main() {
         (2015, 3, 2) => year_2015::day3::part2(file),
         (2015, 4, 1) => year_2015::day4::part1(file),
         (2015, 4, 2) => year_2015::day4::part2(file),
+        (2015, 5, 1) => year_2015::day5::part1(file),
+        (2015, 5, 2) => year_2015::day5::part2(file),
         _ => println!("No solution found."),
     }
 }
