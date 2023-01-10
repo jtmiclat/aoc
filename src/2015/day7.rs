@@ -54,7 +54,10 @@ pub fn part1(file: String) {
     let wire_a = &graph["a"];
     println!("Value of a {:?}", wire_a.calculate(&graph, &mut cache));
 }
-
+#[allow(unused_variables)]
 pub fn part2(file: String) {
-    println!("{:?}", file)
+    println!("Same solution as part 1 using day 7b.txt")
+    // Real solution would be run part 1.
+    // Change line with -> b
+    // Rerun solution again
 }
