@@ -16,4 +16,4 @@ cargo run 2015 1 a input/2015/1.txt
 
 ## Progress Tracking
 
-- **2015** - 6/25
+- **2015** - 7/25
